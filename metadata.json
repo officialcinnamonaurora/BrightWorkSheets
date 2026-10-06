@@ -1,0 +1,6 @@
+{
+  "name": "Name Tracing Generator - BrightWorkSheets",
+  "description": "Free printable name tracing generator for kids, parents, and teachers with custom handwriting guidelines, cursive and print options, and instant PDF printing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
