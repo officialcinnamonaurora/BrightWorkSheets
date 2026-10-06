@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-school-print {
+  font-family: 'Playpen Sans', 'Comic Neue', sans-serif;
+}
+
+.font-school-cursive {
+  font-family: 'Cedarville Cursive', 'Caveat', cursive;
+}
+
+.font-display {
+  font-family: 'Fredoka', 'Outfit', sans-serif;
+}
+
+/* Printable Worksheet Page Styles */
+.worksheet-container {
+  aspect-ratio: 1 / 1.35;
+  width: 100%;
+  max-width: 794px; /* Standard A4/Letter view max width */
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  /* Hide non-printable elements */
+  .no-print,
+  nav,
+  header,
+  footer,
+  .site-footer,
+  .controls-panel,
+  .ad-container,
+  .seo-content,
+  .faq-section {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #printable-worksheet-page,
+  .print-worksheet-page {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-height: 98vh !important;
+    margin: 0 auto !important;
+    padding: 10mm 12mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print-worksheet-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  @page {
+    size: portrait;
+    margin: 6mm;
+  }
+}
